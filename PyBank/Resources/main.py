@@ -41,10 +41,21 @@ if len(changes) > 0:
 else:
     average_change = 0
 
-print("Financial Analysis")
-print("----------------------------")
-print(f"Total Months: {total_months}")
-print(f"Total: ${net_total}")
-print(f"Average Change: ${average_change:.2f}")
-print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
-print(f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})")
+output = (
+    "Financial Analysis\n"
+    "----------------------------\n"
+    f"Total Months: {total_months}\n"
+    f"Total: ${net_total}\n"
+    f"Average Change: ${average_change:.2f}\n"
+    f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})\n"
+    f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})\n"
+)  
+
+print(output)
+
+output_file_path = '/Users/latifahjones/Desktop/financial_analysis.txt'
+
+with open(output_file_path, 'w') as text_file:
+    text_file.write(output)
+
+print(f"Financial analysis exported to {output_file_path}")
