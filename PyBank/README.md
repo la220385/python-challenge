@@ -13,11 +13,11 @@ The purpose of the Python script is to analyze the financial records of a compan
 # Steps Taken
 1. I used Python's `csv` and `os` modules to handle file operations and manage file paths.
 2. I then defined the path to the `budget_data.csv` file to ensure the script knows where to look for the data.
-3. Created variables to track totals, monthly changes, and the greatest increases/decreases in profit.
+3. Listed variables to track totals, monthly changes, and the greatest increases/decreases in profit.
 4. Used `csv.reader` to open and read each row of the CSV file.
 5. For each row, incremented the total number of months and summed up the profits/losses.
-6. Calculate the change in profit between months, starting from the second month.
-7. Computed the average of the monthly changes.
+6. I calculated the change in profit between months, starting from the second month.
+7. Then computed the average of the monthly changes.
 8. Outputted the results to the console in a well-formatted way.
 9. Exported Results to a Text File: I saved the results to `financial_analysis.txt` on my desktop and then to the analysis folder. 
 
