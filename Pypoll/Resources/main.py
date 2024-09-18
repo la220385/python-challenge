@@ -1,6 +1,7 @@
 import csv
 
 file_path = '/Users/latifahjones/Desktop/python-challenge/Pypoll/Resources/election_data.csv'
+output_file_path = '/Users/latifahjones/Desktop/python-challenge/Pypoll/analysis/election_results.txt'
 
 total_votes = 0
 candidates = {}
@@ -38,15 +39,19 @@ print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
 
-with open("election_results.txt", "w") as file:
-    file.write("Election Results\n")
-    file.write("-------------------------\n")
-    file.write(f"Total Votes: {total_votes}\n")
-    file.write("-------------------------\n")
+with open(output_file_path, 'w') as text_file:
 
-for candidate, votes in candidates.items():
-    vote_percentage = (votes / total_votes) * 100
+    text_file.write("Election Results\n")
+    text_file.write("-------------------------\n")
+    text_file.write(f"Total Votes: {total_votes}\n")
+    text_file.write("-------------------------\n")
 
-file.write("-------------------------\n")
-file.write(f"Winner: {winner}\n")
-file.write("-------------------------\n") 
+    for candidate, votes in candidates.items():
+        vote_percentage = (votes / total_votes) * 100
+        text_file.write(f"{candidate}: {vote_percentage:.3f}% ({votes})\n")
+
+    text_file.write("-------------------------\n")
+    text_file.write(f"Winner: {winner}\n")
+    text_file.write("-------------------------\n")
+
+print(f"Election results saved to {output_file_path}")
