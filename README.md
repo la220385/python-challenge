@@ -1,4 +1,3 @@
-"""
 # Overview of Challenge 
 The purpose of the Python script is to analyze the election data from a small town using a dataset (`election_data.csv`). The dataset contains the following information:
 - Voter ID.
